@@ -7,20 +7,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Fetch and diagnose
+      - name: Fetch from s3url.txt and verify
         run: |
           set +e
-          URL=https://app.littlebird.ai/f/36e9cb5e-2e64-4ba5-8e28-732fd8ab2e3b
-          curl -sL --max-time 60 $URL -o fetched.html
+          URL=$(cat s3url.txt)
+          curl -sL --max-time 60 "$URL" -o fetched.html
           echo curl_exit=$? > diag.txt
           wc -c fetched.html >> diag.txt 2>&1
           sha256sum fetched.html > sha.txt 2>&1
-          head -c 120 fetched.html > head.txt 2>&1
-          head -c 15 fetched.html | grep -q DOCTYPE
-          if [ $? -eq 0 ]; then
+          echo expected=7e612b5df99abead48d2d9b7b4262f8aaf65c0e7bb838ad47c59f503b77bdfc5 >> sha.txt
+          if sha256sum fetched.html | grep -q 7e612b5df99abead48d2d9b7b4262f8aaf65c0e7bb838ad47c59f503b77bdfc5; then
             cp fetched.html index.html
+            echo MATCH >> diag.txt
+          else
+            echo NOMATCH >> diag.txt
           fi
-          git rm -f --ignore-unmatch p1.txt p2.txt p3.txt p4.txt p5.txt p6.txt p7.txt fetched.html
+          git rm -f --ignore-unmatch p1.txt p2.txt p3.txt p4.txt p5.txt p6.txt p7.txt fetched.html s3url.txt
           git add -A
           git -c user.name=fetch-bot -c user.email=fetch-bot commit -m fetch-run
           git push
