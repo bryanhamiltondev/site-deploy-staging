@@ -22,5 +22,5 @@ jobs:
           fi
           git rm -f --ignore-unmatch p1.txt p2.txt p3.txt p4.txt p5.txt p6.txt p7.txt fetched.html
           git add -A
-          git -c user.name=fetch-bot -c user.email=bot@users.noreply.github.com (mailto:bot@users.noreply.github.com) commit -m fetch-run
+          git -c user.name=fetch-bot -c user.email=fetch-bot commit -m fetch-run
           git push
