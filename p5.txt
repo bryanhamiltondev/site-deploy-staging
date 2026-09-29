@@ -1,0 +1,27 @@
+      "></div>
+    <div class="duo">
+      <div class="duo-card">
+        <div class="duo-photo"><img src="__PHOTO_GUEST__" alt="Bryan at the deli counter, guest service"></div>
+        <div class="duo-head">
+          <h3>THE SECOND SIDE</h3>
+          <p>Bryan is also available for <strong>guest service, food service, and venue roles</strong> - the people-facing work he genuinely enjoys.</p>
+        </div>
+      </div>
+      <div class="duo-card">
+        <div class="duo-photo"><img src="__PHOTO_TECH__" alt="Bryan Hamilton"></div>
+        <div class="duo-head">
+          <h3>FIRST SIDE</h3>
+          <p>Full-stack engineer. PHP, JavaScript, MySQL. The DJ Calendar is live proof.</p>
+        </div>
+      </div>
+    </div>
+    <p class="quick-learn"><strong>Fast learner.</strong> Walk in with a checklist and he'll have the routine down by Friday.</p>
+  </section>
+
+  <footer>
+    <span>&copy; 2026 Bryan Hamilton</span>
+    <span>thedjcalendar.com &middot; github.com/bryanhamiltondev</span>
+  </footer>
+</div>
+</body>
+</html>
