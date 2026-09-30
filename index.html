@@ -67,50 +67,41 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Ar
 .contact-note{margin-top:12px;font-size:12px;color:#484f58;font-style:italic}
 .site-footer{text-align:center;padding:24px 0 48px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#30304a}
 .site-footer a{color:#00d2ff;text-decoration:none}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94)}
-.reveal.revealed{opacity:1;transform:translateY(0)}
-.reveal-stagger>*{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
-.reveal-stagger.revealed>*:nth-child(1){transition-delay:0s}
-.reveal-stagger.revealed>*:nth-child(2){transition-delay:.1s}
-.reveal-stagger.revealed>*:nth-child(3){transition-delay:.2s}
-.reveal-stagger.revealed>*:nth-child(4){transition-delay:.3s}
-.reveal-stagger.revealed>*{opacity:1;transform:translateY(0)}
-.tilt-card{transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .15s ease-out,border-color .3s ease;will-change:transform}
 </style>
 </head>
 <body>
 <header class="site-header">
   <p class="tagline">BRYAN HAMILTON &#183; ROCHELLE PARK, NJ</p>
-  <h1 class="gradient-breathe">Same guy. Two ways to hire him.</h1>
+  <h1>Same guy. Two ways to hire him.</h1>
 </header>
 <div class="container">
-  <p class="bio reveal"><strong>28 years building for the web</strong> &#8212; founder of The DJ Calendar, shipping production PHP, JavaScript and schema systems with zero-dependency discipline. <strong>And a service veteran</strong> &#8212; registers, prep and stocking at Walmart, Chick-fil-A, Wawa, Shake Shack and ShopRite, available 24/7.</p>
-  <div class="cta-buttons reveal">
+  <p class="bio"><strong>28 years building for the web</strong> &#8212; founder of The DJ Calendar, shipping production PHP, JavaScript and schema systems with zero-dependency discipline. <strong>And a service veteran</strong> &#8212; registers, prep and stocking at Walmart, Chick-fil-A, Wawa, Shake Shack and ShopRite, available 24/7.</p>
+  <div class="cta-buttons">
     <a href="#tech" class="cta-btn tech">Hire the engineer</a>
     <a href="#retail" class="cta-btn retail">Hire the teammate</a>
   </div>
-  <p class="section-label reveal">// choose your future co-worker</p>
-  <div class="cards-grid reveal">
-    <a href="https://thedjcalendar.com/resume/bryan-hamilton-tech.html" class="card tech-card tilt-card" id="tech">
+  <p class="section-label">// choose your future co-worker</p>
+  <div class="cards-grid">
+    <a href="https://thedjcalendar.com/resume/bryan-hamilton-tech.html" class="card tech-card" id="tech">
       <span class="card-number">01 / Tech</span>
       <h2>Full-Stack Web Engineer</h2>
       <p>PHP, vanilla JavaScript, MySQL, WordPress since 2004. Ten production-verbatim open-source repos with CI. Founder and lead developer of The DJ Calendar since 2015.</p>
       <span class="card-arrow">View tech resume</span>
     </a>
-    <a href="https://thedjcalendar.com/resume/bryan-hamilton-retail.html" class="card retail-card tilt-card" id="retail">
+    <a href="https://thedjcalendar.com/resume/bryan-hamilton-retail.html" class="card retail-card" id="retail">
       <span class="card-number">02 / Retail</span>
       <h2>Guest Service &#183; Team Member</h2>
       <p>Food service and retail experience at Shake Shack, Wawa, Chick-fil-A, Walmart and ShopRite. Registers, prep, stocking &#8212; whatever the shift needs. Available 24/7.</p>
       <span class="card-arrow">View retail resume</span>
     </a>
   </div>
-  <div class="stats-section reveal reveal-stagger">
-    <div class="stat"><span class="stat-number" data-count-to="28">28</span><p class="stat-label">Years in tech</p></div>
-    <div class="stat"><span class="stat-number" data-count-to="10">10</span><p class="stat-label">Open-source repos</p></div>
-    <div class="stat"><span class="stat-number" data-count-to="214000">214K</span><p class="stat-label">Community members</p></div>
-    <div class="stat"><span class="stat-number" data-count-to="15">'15</span><p class="stat-label">Founder, The DJ Calendar</p></div>
+  <div class="stats-section">
+    <div class="stat"><span class="stat-number">28</span><p class="stat-label">Years in tech</p></div>
+    <div class="stat"><span class="stat-number">10</span><p class="stat-label">Open-source repos</p></div>
+    <div class="stat"><span class="stat-number">214K</span><p class="stat-label">Community members</p></div>
+    <div class="stat"><span class="stat-number">'15</span><p class="stat-label">Founder, The DJ Calendar</p></div>
   </div>
-  <div class="contact-section reveal">
+  <div class="contact-section">
     <h2>Find me</h2>
     <div class="contact-links">
       <span>Text <a href="sms:+12014063595">(201) 406-3595</a></span><span class="separator">&#183;</span>
@@ -122,15 +113,5 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Ar
   </div>
 </div>
 <footer class="site-footer">ALSO BUILDING <a href="https://thedjcalendar.com/">THEDJCALENDAR.COM</a> &#183; BRYAN HAMILTON &#183; ROCHELLE PARK, NJ</footer>
-<script>
-(function(){'use strict';
-const ro=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){n.target.classList.add('revealed');ro.unobserve(n.target)}})},{threshold:.2});
-document.querySelectorAll('.reveal').forEach(e=>ro.observe(e));
-const co=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){const e=n.target,t=parseInt(e.getAttribute('data-count-to'));if(isNaN(t))return;co.unobserve(e);!function e(n,o){let a=performance.now();!function r(t){const l=Math.min((t-a)/1600,1),c=1===l?1:1-Math.pow(2,-10*l);n.textContent=Math.round(c*o);l<1?requestAnimationFrame(r):n.textContent=n.getAttribute('data-count-to')}()}()}})},{threshold:.5});
-document.querySelectorAll('[data-count-to]').forEach(e=>co.observe(e));
-document.querySelectorAll('.tilt-card').forEach(e=>{e.addEventListener('mousemove',n=>{const o=e.getBoundingClientRect();e.style.setProperty('--rx',((n.clientY-o.top-o.height/2)/o.height*2)*-8+'deg');e.style.setProperty('--ry',((n.clientX-o.left-o.width/2)/o.width*2)*8+'deg')});e.addEventListener('mouseleave',()=>{e.style.setProperty('--rx','0deg');e.style.setProperty('--ry','0deg')})});
-const g=document.querySelectorAll('.gradient-breathe');if(g.length){let s=performance.now();!function e(n){const o=20+Math.sin((n-s)/1e3*.4)*15;g.forEach(e=>e.style.backgroundPosition=o+'% 50%');requestAnimationFrame(e)}()}
-})();
-</script>
 </body>
 </html>
