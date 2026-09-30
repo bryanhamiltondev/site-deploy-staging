@@ -1,3 +1,3 @@
-curl_exit=0
+curl_exit=3
 1573 fetched.html
 NOMATCH
